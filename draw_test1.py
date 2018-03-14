@@ -1,0 +1,57 @@
+"""draw_rect1.py"""
+import sys
+import pygame
+from pygame.locals import QUIT, Rect
+
+pygame.init()
+SURFACE = pygame.display.set_mode((400,300))
+FPSLOCK = pygame.time.Clock()
+
+def main():
+    """main routine"""
+
+    while True:
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                pygame.quit()
+                sys.exit()
+
+        SURFACE.fill((255,255,255))
+
+        #赤：矩形（塗りつぶし）
+        pygame.draw.rect(SURFACE, (255, 0, 0),
+            (10, 20, 100, 50))
+
+        #赤：矩形（太さ3)
+        pygame.draw.rect(SURFACE,(255, 0, 0),
+            (150, 10, 100, 30), 3)
+
+        #緑：矩形
+        pygame.draw.rect(SURFACE, (0,255,0),
+            ((100,80), (80,50)))
+
+        #青：矩形,Rectオブジェクト
+        rect0 = Rect(200, 60, 140, 80)
+        pygame.draw.rect(SURFACE, (0,0,255), rect0)
+
+        #黄：矩形,Rectオブジェクト
+        rect1 = Rect((30,160), (100,50))
+        pygame.draw.rect(SURFACE, (255,255,0),rect1)
+
+        pygame.draw.circle(SURFACE, (255,0,255),
+            (30,50), 20)
+
+        pygame.draw.ellipse(SURFACE, (51,51,22),
+            (50,50,140,60))
+
+        pygame.draw.line(SURFACE, (0,0,0), (0,100),
+            (250, 0))
+
+        pygame.draw.line(SURFACE, (0,0,200), (100,100),
+            (250, 0), 20)
+
+        pygame.display.update()
+        FPSLOCK.tick(3)
+
+if __name__ == '__main__':
+    main()
