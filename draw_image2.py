@@ -1,4 +1,5 @@
 """draw_image_subregion2.py"""
+
 import sys
 import pygame
 from pygame.locals import QUIT, Rect, KEYDOWN, K_LEFT, K_RIGHT
