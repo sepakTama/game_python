@@ -6,7 +6,7 @@ from pygame.locals import QUIT, KEYDOWN, \
     K_LEFT, K_RIGHT, K_UP, K_DOWN
 
 pygame.init()
-pygame.key.set_repeat(5,5)
+pygame.key.set_repeat(1,1)
 SURFACE = pygame.display.set_mode((400,300))
 FPSCLOCK = pygame.time.Clock()
 
