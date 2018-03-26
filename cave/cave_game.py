@@ -70,6 +70,8 @@ def main():
 
         if game_over:
             SURFACE.blit(bang_image, (0, ship_y - 40))
+            return_image = sysfont.render("Push 'Enter' for playing again", True, (0,0,225))
+            SURFACE.blit(return_image,(220,300))
 
         pygame.display.update()
         FPSCLOCK.tick(15)
