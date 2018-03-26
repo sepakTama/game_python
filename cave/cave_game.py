@@ -4,7 +4,7 @@
 import sys
 from random import randint
 import pygame
-from pygame.locals import QUIT, Rect, KEYDOWN, K_SPACE
+from pygame.locals import QUIT, Rect, KEYDOWN, K_SPACE, K_RETURN
 
 pygame.init()
 pygame.key.set_repeat(5,5)
@@ -35,6 +35,8 @@ def main():
             elif event.type == KEYDOWN:
                 if event.key == K_SPACE:
                     is_space_down = True
+                elif game_over and event.key == K_RETURN:
+                    main()
 
         #時機を移動
         if not game_over:
